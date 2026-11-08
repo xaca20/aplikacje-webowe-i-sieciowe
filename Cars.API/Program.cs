@@ -21,11 +21,12 @@ builder.Services.AddDbContext<DataContext>(options =>
 //CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    options.AddPolicy("CorsPolicy", policy =>
     {
-        policy.AllowAnyMethod()
-              .AllowAnyHeader()
-              .WithOrigins("http://localhost:5156");
+        policy
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .WithOrigins("http://localhost:5173");
     });
 });
 
